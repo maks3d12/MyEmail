@@ -1,0 +1,44 @@
+﻿<Window x:Class="MyEmail.View.StartWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyEmail.View"
+        mc:Ignorable="d"
+       Title="StartWindow" Height="450" Width="600" MinHeight="450" MinWidth="450">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="4*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1" Grid.Column="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="0.4*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.4*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="0.7*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Вход" Grid.ColumnSpan="2" FontSize="16" HorizontalAlignment="Center"></TextBlock>
+            <TextBox Grid.Row="1" ToolTip="Логин" Margin="20" FontSize="16" Text="{Binding Login,Mode=OneWayToSource}" ></TextBox>
+            <ComboBox Grid.Row="1" Grid.Column="1" Margin="10,20,10,20" ItemsSource="{Binding ItemInComboBox}" DisplayMemberPath="Email" SelectedIndex="{Binding Mail}" SelectedValuePath="Link" />
+             <TextBox ToolTip="Пароль" Grid.Row="2" Margin="20" FontSize="16" Grid.ColumnSpan="2" Text="{Binding Password,Mode=OneWayToSource}"></TextBox>
+            <Button Grid.Row="3" Grid.ColumnSpan="2" Margin="15" FontSize="16" Content="Войти" Command="{Binding AddCommand}"></Button>
+        </Grid>
+
+
+
+    </Grid>
+</Window>
+
